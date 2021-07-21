@@ -83,7 +83,8 @@ form.addEventListener("submit", function (e) {
     dateErrorMessage === true &&
     cpfErrorMessage === true
   ) {
-    msgReturn.innerHTML = "Formulário enviado com sucesso!";
+    alert("Formulário enviado com sucesso!")
+    //window.location.reload();
   } else {
     msgReturn.innerHTML = " ";
   }
