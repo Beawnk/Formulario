@@ -1,0 +1,47 @@
+  //Formatação do cpf para o formato ___.___.___-__
+  function cpf_mask(key, inputCpf, cpfSize) {
+    var code = key.which ? key.which : key.keyCode;
+    if (code == 8) return true;
+    if (code != 46 && (code < 48 || code > 57)) return false;
+    inputCpf.maxLength = cpfSize.length;
+    var entrada = inputCpf.value;
+    if (
+      cpfSize.length > entrada.length &&
+      cpfSize.charAt(entrada.length) != "#"
+    ) {
+      inputCpf.value = entrada + cpfSize.charAt(entrada.length);
+    }
+    return true;
+  }
+  //Validação de cpf tirado do site da receita federal
+  function testCPF(cpf) {
+      cpf = cpf.replace(/[^\d]+/g, "");
+      if (cpf == "") return false;
+      if (
+        cpf.length != 11 ||
+        cpf == "00000000000" ||
+        cpf == "11111111111" ||
+        cpf == "22222222222" ||
+        cpf == "33333333333" ||
+        cpf == "44444444444" ||
+        cpf == "55555555555" ||
+        cpf == "66666666666" ||
+        cpf == "77777777777" ||
+        cpf == "88888888888" ||
+        cpf == "99999999999"
+      )
+        return false;
+      let add = 0;
+      for (let i = 0; i < 9; i++) add += parseInt(cpf.charAt(i)) * (10 - i);
+       let rev = 11 - (add % 11);
+      if (rev == 10 || rev == 11) rev = 0;
+      if (rev != parseInt(cpf.charAt(9))) return false;
+      add = 0;
+      for (let i = 0; i < 10; i++) add += parseInt(cpf.charAt(i)) * (11 - i);
+      rev = 11 - (add % 11);
+      if (rev == 10 || rev == 11) rev = 0;
+      if (rev != parseInt(cpf.charAt(10))) return false;
+      return true;
+  }
+
+export { cpf_mask,  testCPF};
