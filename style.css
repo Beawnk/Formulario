@@ -1,18 +1,16 @@
+.hide {
+  display: none !important;
+}
+
 body {
-  margin-top: 70px;
+  margin-top: 2%;
   background: #52758d;
   font-family: "Inter", sans-serif;
 }
 * {
   box-sizing: border-box;
 }
-#título {
-  text-align: center;
-  margin-bottom: 3pc;
-  font-size: 2pc;
-  font-family: "Inter", sans-serif;
-}
-section {
+section.body {
   background: white;
   border-radius: 15px;
   padding: 40px;
@@ -21,35 +19,34 @@ section {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
   font-size: 20px;
 }
-#form input.valid {
-  border-color: rgb(62, 243, 62);
-  border-width: 1px;
-}
-#form input.invalid {
-  border-color: rgb(230, 30, 30);
-  border-width: 1px;
+
+#título {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 4pc;
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
 }
 #form label {
   font-family: "Inter", sans-serif;
-  margin-bottom: 6px;
-  margin-left: 4px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  margin-left: 5px;
   display: block;
-  font-size: 14px;
+  font-size: 15px;
 }
-#form .msg-error {
-  font-size: 14px;
-  color: rgb(230, 30, 30);
+#form .text-danger {
+  display: block;
+  font-size: 12px;
+  color: red;
   margin-top: 8px;
-  margin-bottom: 16px;
-}
-.msg-return {
-  text-align: center;
-  display: block;
-  color: #666666;
+  margin-bottom: px;
+  margin-left: 10px;
 }
 #form input {
   font-family: "Inter", sans-serif;
-  height: 20px;
+  height: 45px;
   width: 100%;
   background: rgba(231, 231, 231, 0.548);
   padding: 20px;
@@ -57,15 +54,26 @@ section {
   border: 2px solid transparent;
   outline: none;
 }
+#form input.valid {
+  border-color: rgb(4, 255, 4);
+  border-width: 1px;
+}
+#form input.invalid {
+  border-color: red;
+  border-width: 1px;
+}
 #form input:focus {
   background-color: #88898a5b;
 }
 #form input:hover {
-    background-color: #88898a5b;
+  background-color: #88898a5b;
 }
 #botao {
-  margin-bottom: 2pc;
-  margin-top: 1pc;
+  display: block;
+  font-family: "Inter", sans-serif;
+  height: 45px;
+  margin-bottom: 40px;
+  margin-top: 4pc;
   padding: 10px;
   width: 100%;
   border-radius: 12px;
@@ -78,4 +86,17 @@ section {
 }
 #botao:hover {
   background-color: rgb(1, 133, 221);
+}
+
+footer {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  margin-top: 3pc;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }
